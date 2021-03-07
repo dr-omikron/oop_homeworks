@@ -23,6 +23,7 @@ class Power
 };
 
 //Ex2 (uint8_t интерпритируется как char, приводить к типу int, думаю не имеет смысла, поэтому использую uint16_t)
+//https://stackoverflow.com/questions/19562103/uint8-t-cant-be-printed-with-cout
 
 class RGBA
 {
@@ -62,7 +63,16 @@ private:
 		{
 			return false;
 		}
+		
 	}
+	
+	/*
+	better one line
+	bool CheckNullPoiner()
+	{
+		return m_array == nullptr;	
+	}
+	*/
 	void CheckLenght()
 	{
 		if (m_lenght <= 0)
@@ -153,7 +163,8 @@ public:
 		{
 			m_array[count] = 0;
 		}
-	
+	// cpp:memset wil be useful https://en.cppreference.com/w/cpp/string/byte/memset
+		
 	}
 
 	void FillIncrementValues()
