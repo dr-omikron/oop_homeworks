@@ -1,4 +1,4 @@
-﻿#include <iostream>
+﻿﻿#include <iostream>
 #include <vector>
 
 class Card
@@ -38,20 +38,20 @@ private:
     bool m_faceUp;
 };
 
-class Hand 
+class Hand
 {
 protected:
-    std::vector<Card*> m_cards;
+    std::vector<Card *> m_cards;
 public:
     Hand() { m_cards.reserve(7); }
-    void Add (Card *newCard);
+    void Add(Card *newCard);
     int GetTotal() const;
     void Clear();
     virtual ~Hand() { Clear(); }
 };
 
 Card::Card(Rank r, Suit s, bool fU)
-    :m_rank(r), m_suit(s), m_faceUp(fU){}
+    :m_rank(r), m_suit(s), m_faceUp(fU) {}
 
 int Card::GetValue() const
 {
@@ -70,8 +70,8 @@ void Hand::Add(Card *newCard)
 }
 int Hand::GetTotal() const
 {
-    if (m_cards.empty()) {return 0;}
-    if (m_cards[0]->GetValue() == 0) {return 0;}
+    if (m_cards.empty()) { return 0; }
+    if (m_cards[0]->GetValue() == 0) { return 0; }
     int total = 0;
     std::vector<Card *>::const_iterator it;
     for (it = m_cards.begin(); it != m_cards.end(); ++it)
@@ -86,7 +86,7 @@ int Hand::GetTotal() const
             containsAce = true;
         }
     }
-    if (containsAce && total <= 11) {total += 10;}
+    if (containsAce && total <= 11) { total += 10; }
     return total;
 }
 void Hand::Clear()
@@ -102,6 +102,6 @@ void Hand::Clear()
 
 int main()
 {
-    
+
 }
 
