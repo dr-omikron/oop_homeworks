@@ -14,7 +14,7 @@ int main()
     //Ex1
     try
     {
-        std::cout << Div(12, 4) << "\n";
+        std::cout << Div(12, 0) << "\n";
     }
     catch (const char* ex)
 	{
@@ -23,17 +23,17 @@ int main()
     //Ex2
 
     Bar bar;
-    int n = 0;
+    int num = 0;
     try
     {
         do {
-            std::cin >> n;
-            bar.Set(n);
-        } while (n != 0);
+            std::cin >> num;
+            bar.Set(num);
+        } while (num != 0);
     }
     catch (Ex &ex)
     {
-        std::cout << "Error! " << ex.Data();
+        std::cout << "Error! " << ex.Data() << std::endl;
     }
     //Ex3
 
